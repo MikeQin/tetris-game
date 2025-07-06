@@ -428,12 +428,13 @@ export function useConfirm() {
   }, []);
 
   const hideConfirm = React.useCallback(() => {
-    if (confirm.onCancel) {
-      confirm.onCancel();
-    } else {
-      setConfirm(prev => ({ ...prev, isOpen: false }));
-    }
-  }, [confirm.onCancel]);
+    setConfirm(prev => {
+      if (prev.onCancel) {
+        prev.onCancel();
+      }
+      return { ...prev, isOpen: false };
+    });
+  }, []);
 
   const ConfirmModalComponent = () => (
     <ConfirmModal

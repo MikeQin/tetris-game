@@ -48,7 +48,7 @@ function StatDisplay({ label, value, description, highlight = false, className =
  * @param {string} props.className - Additional CSS classes
  * @returns {JSX.Element} AnimatedScore component
  */
-function AnimatedScore({ score, previousScore = 0, className = '' }) {
+function AnimatedScore({ score, className = '' }) {
   // Just display the score directly without any state or effects to avoid loops
   return (
     <div className={className}>
@@ -183,7 +183,7 @@ function PerformanceStats({ gameState, className = '' }) {
  */
 export function GameStats({ 
   gameState, 
-  previousGameState = {}, 
+  // previousGameState = {}, // Removed unused parameter
   showPerformance = false,
   compact = false,
   className = '' 
@@ -301,7 +301,7 @@ export function GameOverStats({ gameState, className = '' }) {
  * @param {string} props.className - Additional CSS classes
  * @returns {JSX.Element} LeaderboardPosition component
  */
-export function LeaderboardPosition({ rank, score, isNewRecord = false, className = '' }) {
+export function LeaderboardPosition({ rank, /* score, */ isNewRecord = false, className = '' }) {
   if (!rank) {
     return (
       <div className={`text-center text-muted-foreground text-sm ${className}`}>

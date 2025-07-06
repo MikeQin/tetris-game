@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Navigation } from '../../components/Navigation.js';
 import { Leaderboard, LeaderboardStats, PersonalBest } from '../../components/Leaderboard.js';
-import { useAlert, useConfirm } from '../../components/AlertModal.js';
+// import { useConfirm } from '../../components/AlertModal.js'; // Temporarily disabled
 import { useLeaderboard, usePlayerName } from '../../hooks/useLeaderboard.js';
 
 export default function LeaderboardPage() {
@@ -16,8 +16,8 @@ export default function LeaderboardPage() {
     clearLeaderboard 
   } = useLeaderboard();
   const { playerName } = usePlayerName();
-  const { showAlert, AlertModal } = useAlert();
-  const { showConfirm, ConfirmModal } = useConfirm();
+  // const { showAlert, AlertModal } = useAlert(); // Removed unused variables
+  // const { showConfirm, ConfirmModal } = useConfirm(); // Temporarily disabled
 
   const stats = getLeaderboardStats();
   const personalBest = getPlayerBest(playerName);
@@ -59,14 +59,7 @@ export default function LeaderboardPage() {
                     
                     <button
                       onClick={async () => {
-                        const confirmed = await showConfirm({
-                          title: 'Clear All Scores',
-                          message: 'Are you sure you want to clear all scores? This action cannot be undone.',
-                          confirmText: 'Clear All',
-                          cancelText: 'Cancel',
-                          type: 'error'
-                        });
-                        if (confirmed) {
+                        if (window.confirm('Are you sure you want to clear all scores? This cannot be undone.')) {
                           clearLeaderboard();
                         }
                       }}
@@ -154,7 +147,7 @@ export default function LeaderboardPage() {
         </div>
       </main>
       
-      <ConfirmModal />
+      {/* <ConfirmModal /> */}
     </>
   );
 }

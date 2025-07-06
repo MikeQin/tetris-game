@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MiniBoard } from './GameBoard.js';
+import { PiecePreview } from './GamePiece.js';
 
 /**
  * Hold piece display component.
@@ -77,7 +78,7 @@ export function HoldPiece({
 export function EnhancedHoldPiece({ 
   holdPiece, 
   canHold = true, 
-  onHold,
+  // onHold, // Removed unused parameter
   holdCount = 0,
   showStats = false,
   className = '' 

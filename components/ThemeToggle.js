@@ -136,15 +136,13 @@ export function ThemeToggleWithLabel({
   className = '' 
 }) {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  // Removed unused toggleTheme function - component uses ThemeToggle instead
 
   if (!mounted) {
     return (

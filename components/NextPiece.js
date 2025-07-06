@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MiniBoard } from './GameBoard.js';
+import { PiecePreview } from './GamePiece.js';
 
 /**
  * Next piece preview component.
@@ -190,7 +191,7 @@ export function CompactNextPiece({ nextPiece, className = '' }) {
 export function NextPieceSidebar({ 
   nextPiece, 
   upcomingPieces = [], 
-  pieceStats = {},
+  // pieceStats = {}, // Removed unused parameter
   pieceHistory = [],
   className = '' 
 }) {

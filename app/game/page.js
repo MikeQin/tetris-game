@@ -58,10 +58,7 @@ export default function GamePage() {
   
   // Debug the hook state only once on mount
   useEffect(() => {
-    console.log('🔍 Leaderboard hook initialized:', {
-      leaderboardLength: leaderboardHook.leaderboard?.length || 0,
-      isLoading: leaderboardHook.isLoading
-    });
+    console.log('🔍 Leaderboard hook initialized');
   }, []);
   const [showNameInput, setShowNameInput] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

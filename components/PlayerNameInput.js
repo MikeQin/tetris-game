@@ -193,17 +193,13 @@ export function PlayerNameInput({
     
     try {
       await onSubmit(name.trim());
-    } catch (err) {
+    } catch {
       setError('Failed to save name. Please try again.');
       setIsSubmitting(false);
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape' && !required) {
-      onClose();
-    }
-  };
+  // Removed unused handleKeyDown function
 
   return (
     <Modal isOpen={isOpen} onClose={required ? undefined : onClose}>

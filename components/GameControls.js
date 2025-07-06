@@ -342,7 +342,7 @@ export function GameControls({
  */
 export function SimpleControls({ 
   gameState, 
-  onStart, 
+  // onStart, // Removed unused parameter
   onReset, 
   onPause, 
   className = '' 
