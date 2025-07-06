@@ -208,17 +208,6 @@ No environment variables required - the game runs entirely client-side.
 - **Safari** - Full support
 - **Mobile Browsers** - Optimized touch controls
 
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Screenshot](https://via.placeholder.com/800x600/1a1a1a/ffffff?text=Desktop+Tetris+Game)
-
-### Mobile View  
-![Mobile Screenshot](https://via.placeholder.com/400x800/1a1a1a/ffffff?text=Mobile+Tetris+Game)
-
-### Dark Theme
-![Dark Theme](https://via.placeholder.com/800x600/000000/ffffff?text=Dark+Theme)
-
 ## 🤝 Contributing
 
 This project demonstrates Context Engineering principles. Contributions that enhance the educational value are welcome:
